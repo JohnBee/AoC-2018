@@ -15,16 +15,9 @@ public class TreeBuilder {
         inputData.remove(0);
         return out;
     }
-    private static List<Integer> getNextN(int N, ArrayList<Integer> inputData){
-        List<Integer> out = List.of(new Integer[N]);
-        for(int n = 0; n < N; n++){
-            out.add(consumeNextData(inputData));
-        }
-        return out;
-    }
+
     public static Node buildTree(List<Integer> inputData){
-        Node root = buildNode(inputData);
-        return root;
+        return buildNode(inputData);
     }
 
     private static Node buildNode(List<Integer> inputData) {
@@ -46,17 +39,15 @@ public class TreeBuilder {
         while(!toVisit.isEmpty()){
             Node current = toVisit.get(0);
             toVisit.remove(0);
-            metadataSum += current.getMetadataList().stream().reduce(0, (a, b) -> (a + b)); // sum up the metadata
-            for(Node child : current.getChildrenList()){
-                toVisit.add(child);
-            }
+            metadataSum += current.getMetadataList().stream().reduce(0, Integer::sum); // sum up the metadata
+            toVisit.addAll(current.getChildrenList());
         }
         return metadataSum;
     }
     public static int getRootNodeValue(Node current){
         int nodeSum = 0;
         if(current.getNoOfChildren() == 0){
-            return current.getMetadataList().stream().reduce(0, (a, b) -> a+b);
+            return current.getMetadataList().stream().reduce(0, Integer::sum);
         }
         for(int childIndex : current.getMetadataList()){
             int index = childIndex - 1;
