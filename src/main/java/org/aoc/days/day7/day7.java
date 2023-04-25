@@ -34,7 +34,7 @@ public class day7 {
     }
 
     public static int part2(String p1Result, HashMap<Character, ArrayList<Character>> requirementsMap){
-        WorkerHandler wh = new WorkerHandler(5); // 4 workers
+        WorkerHandler wh = new WorkerHandler(5); // 5 workers
         return wh.run(p1Result, requirementsMap);
     }
 
