@@ -7,6 +7,8 @@ import org.aoc.days.day5.day5;
 import org.aoc.days.day6.day6;
 import org.aoc.days.day7.day7;
 import org.aoc.days.day8.day8;
+import org.aoc.days.day9.day9;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +16,6 @@ public class Main {
             System.out.println("Missing input filename arg.");
             return;
         }
-        day8.run(args[0]);
+        day9.run(args[0]);
     }
 }

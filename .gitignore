@@ -28,3 +28,6 @@ replay_pid*
 
 # Input files
 src/main/inputs/*
+
+# target
+/target/*

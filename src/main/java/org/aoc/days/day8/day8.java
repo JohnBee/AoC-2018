@@ -19,7 +19,7 @@ public class day8 {
         return TreeBuilder.getRootNodeValue(tree);
     }
     public static void run(String inputFileName){
-        ArrayList<String> input = FileLoader.loader(inputFileName);
+        List<String> input = FileLoader.loader(inputFileName);
         System.out.println("Part 1: " + part1(input));
         System.out.println("Part 2: " + part2(input));
     }
