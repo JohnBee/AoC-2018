@@ -77,7 +77,7 @@ public class PlantsState {
     public Integer getEndIndex() {
         Integer index =this.state.entrySet().stream().filter(e -> e.getValue() == '#').map(Map.Entry::getKey).max(Integer::compareTo).orElse(null);
         if(index != null){
-            return index + 5;
+            return index + 5; // add buffer to allow for stirng of '.' after
         }
         return null;
     }
@@ -85,7 +85,7 @@ public class PlantsState {
     public Integer getStartIndex() {
         Integer index = this.state.entrySet().stream().filter(e -> e.getValue() == '#').map(Map.Entry::getKey).min(Integer::compareTo).orElse(null);
         if(index != null){
-            return index - 5;
+            return index - 5; // add buffer to allow for stirng of '.' before
         }
         return null;
     }
